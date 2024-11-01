@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     function mostrarPopupNotificacao() {
         // Obtém a mensagem do atributo 'mensagem' da tag <script>
-        const scriptTag = document.querySelector('script[mensagem]');
+        const scriptTag = document.querySelector('#app');
         if (!scriptTag) return;
 
         const mensagem = scriptTag.getAttribute('mensagem') || 'Você tem uma nova notificação!';
