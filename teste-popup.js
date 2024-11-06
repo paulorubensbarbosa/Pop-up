@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     function mostrarPopupNotificacao() {
         // Obtém a mensagem do atributo 'mensagem' da tag <script>
-        const scriptTag = document.querySelector('.vue-notification-group');
+        const scriptTag = document.querySelector('script[mensagem]');
         if (!scriptTag) return;
 
         const mensagem = scriptTag.getAttribute('mensagem') || 'Você tem uma nova notificação!';
@@ -61,7 +61,13 @@ document.addEventListener('DOMContentLoaded', function() {
             </div>
         `;
 
-        document.body.appendChild(popup);
+        // Adiciona o pop-up ao final do body ou dentro da div app, se existir
+        const targetDiv = document.getElementById('app');
+        if (targetDiv) {
+            targetDiv.appendChild(popup);
+        } else {
+            document.body.appendChild(popup);
+        }
 
         // Função para fechar o pop-up
         popup.querySelector('.close-btn').addEventListener('click', function() {
