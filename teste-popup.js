@@ -4,7 +4,10 @@ document.addEventListener('DOMContentLoaded', function() {
         const scriptTag = document.querySelector('script[mensagem]');
         if (!scriptTag) return;
 
-        const mensagem = scriptTag.getAttribute('mensagem') || 'Você tem uma nova notificação!';
+        
+        //scriptTag.getAttribute('mensagem') ||
+
+        const mensagem =  'Você tem uma nova notificação!';
         const popupKey = 'popupMensagemFechada';
         
         // Verifica se o pop-up já foi fechado ou se a mensagem foi alterada
